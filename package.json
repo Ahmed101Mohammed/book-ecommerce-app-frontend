@@ -1,0 +1,59 @@
+{
+  "name": "book-ecommerce-app-frontend",
+  "version": "1.0.0",
+  "description": "Frontend part of E-commerce app for books",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "powershell -File ./build_script.ps1",
+    "dev": "nodemon --watch webpack.config.js --exec npx webpack serve --mode=development",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint:check": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed101Mohammed/book-ecommerce-app-frontend.git"
+  },
+  "keywords": [
+    "frontend-ecommerce",
+    "ecommerce-books",
+    "ecommerec",
+    "E-commerce"
+  ],
+  "author": "Ahmed Mohamed Al-Adl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ahmed101Mohammed/book-ecommerce-app-frontend/issues"
+  },
+  "homepage": "https://github.com/Ahmed101Mohammed/book-ecommerce-app-frontend#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.0",
+    "promise-polyfill": "8.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.0.2",
+    "webpack": "^5.97.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@eslint/js": "^9.17.0",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.13.0",
+    "nodemon": "^3.1.9",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "prettier": "^3.4.2",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.17",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
