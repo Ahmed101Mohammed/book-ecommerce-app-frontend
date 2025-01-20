@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
+import Register from './components/Register.jsx'
 import './index.css'
+import { Routes, Route, Link } from 'react-router-dom'
+import Notification from './components/Notification.jsx'
+import Sign from './components/Sign.jsx'
 
 const App = () => {
-  const [counter, setCounter] = useState(0)
-  const baseUrl =
-    NODE_ENV === 'production'
-      ? window.location.origin // Use the production server's origin
-      : BACKEND_BASE_URL
+  
   return (
     <>
-      <h1 className='text-3xl font-bold underline'>Hello React with webpack {baseUrl}</h1>
-      <button onClick={() => setCounter(counter + 1)}>increment</button>
-      {counter}
+      <Notification />
+      <Routes>
+        <Route path="/register" element={<Register />}/>
+        <Route path="/sign" element={<Sign />}/>
+      </Routes>
     </>
   )
 }

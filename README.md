@@ -29,11 +29,11 @@ It's a simple frontend of an e-commerce app for books.
   - Add support for English and Arabic languages.
   - Create a language toggle feature.
 
-- [ ] **Authentication**
+- [X] **Authentication**
 
-  - Design login and signup forms.
-  - Connect forms to backend authentication endpoints.
-  - Use JWT for session management.
+  - [X] Design login and signup forms.
+  - [X] Connect forms to backend authentication endpoints.
+  - [X] Use JWT for session management.
 
 - [ ] **Admin Dashboard**
 

@@ -3,7 +3,7 @@ const webpack = require('webpack')
 
 const config = (env, argv) => {
   const backendBaseUrl =
-    argv.mode === 'production' ? '' : 'http://localhost:3500'
+    argv.mode === 'production' ? '' : 'http://localhost:4300'
 
   return {
     entry: path.resolve(__dirname, 'src', 'index.jsx'),
@@ -16,6 +16,7 @@ const config = (env, argv) => {
       compress: true,
       port: 9000,
       open: false,
+      historyApiFallback: true
     },
     devtool: 'source-map',
     module: {
@@ -58,6 +59,10 @@ const config = (env, argv) => {
               },
             },
           ],
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          type: 'asset/resource'
         },
       ],
     },
