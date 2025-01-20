@@ -14,6 +14,7 @@ export default [
     rules: {
       ...pluginJs.configs.recommended.rules,
       'no-undef': 'off',
+      'no-unused-vars': 'off'
     },
     ignores: ["dist/*"]
   },
