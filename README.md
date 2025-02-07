@@ -15,19 +15,19 @@ It's a simple frontend of an e-commerce app for books.
 
 - [ ] **User Interface**
 
-  - Design and implement the homepage:
-    - List of available boxes.
-    - Box details (e.g., title, price, and image).
-  - Create a box details page:
-    - Show full details about a selected box.
-  - Implement a shopping cart page:
-    - Add/remove boxes.
-    - Display total price.
+  - [X] Design and implement the homepage:
+    - [X] List of available boxes.
+    - [X] Box details (e.g., title, price, and image).
+  - [ ] Create a box details page:
+    - [ ] Show full details about a selected box.
+  - [ ] Implement a shopping cart page:
+    - [ ] Add/remove boxes.
+    - [ ] Display total price.
 
 - [ ] **Localization**
 
-  - Add support for English and Arabic languages.
-  - Create a language toggle feature.
+  - [ ] Add support for English and Arabic languages.
+  - [ ] Create a language toggle feature.
 
 - [X] **Authentication**
 
@@ -35,16 +35,16 @@ It's a simple frontend of an e-commerce app for books.
   - [X] Connect forms to backend authentication endpoints.
   - [X] Use JWT for session management.
 
-- [ ] **Admin Dashboard**
+- [X] **Admin Dashboard**
 
-  - Create a basic dashboard for managing boxes:
-    - Add new boxes.
-    - Edit box details.
-    - Delete boxes.
-    - View inventory status.
+  - [X] Create a basic dashboard for managing boxes:
+    - [X] Add new boxes.
+    - [X] Edit box details.
+    - [X] Delete boxes.
+    - [X] View inventory status.
 
 - [ ] **API Integration**
-  - Fetch data from backend APIs for boxes and user authentication.
-  - Send data to backend for cart management and admin operations.
+  - [ ] Fetch data from backend APIs for boxes and user authentication.
+  - [ ] Send data to backend for cart management and admin operations.
 
 ---
