@@ -12,10 +12,20 @@ const notificationSlice = createSlice({
     removeNotification(state, action)
     {
       return null
+    },
+    setSuccessNotification(state, action)
+    {
+      const message = action.payload
+      return {state: true, message}
+    },
+    setErrorNotification(state, action)
+    {
+      const message = action.payload
+      return {state: false, message}
     }
   }
 })
 
 
-export const { setNotification, removeNotification } = notificationSlice.actions
+export const { setNotification, removeNotification, setSuccessNotification, setErrorNotification } = notificationSlice.actions
 export default notificationSlice.reducer

@@ -1,9 +1,6 @@
 import axios from "axios"
+import baseUrl from "./baseUrl"
 
-const baseUrl =
-    NODE_ENV === 'production'
-      ? window.location.origin // Use the production server's origin
-      : BACKEND_BASE_URL
 const register = async(userData) =>
 {
   const {name, password, email} = userData
@@ -21,14 +18,15 @@ const register = async(userData) =>
 }
 
 
-const sign = async(userData) =>
+const login = async(userData) =>
 {
   const {email, password} = userData
   try
   {
     const response = await axios
       .post(`${baseUrl}/auth/login`,
-        {email, password}
+        {email, password},
+        { withCredentials: true }
       )
     return response.data
   }
@@ -38,9 +36,24 @@ const sign = async(userData) =>
   }
 }
 
+const refreshToken = async() =>
+{
+  try
+  {
+    const response = await axios
+      .get(`${baseUrl}/auth/refreash`, { withCredentials: true })
+      return response.data
+  }
+  catch(error)
+  {
+    return error.response.data
+  }
+}
+
 const authServices = {
   register,
-  sign
+  login,
+  refreshToken
 }
 
 export default authServices

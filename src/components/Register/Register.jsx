@@ -1,29 +1,29 @@
 import React from "react"
-import Input from "./Input.jsx"
-import bookStoreImage from '../assets/book-store.png'
-import authServices from "../services/auth.js"
+import Input from "../Input.jsx"
+import bookStoreImage from '../../assets/book-store.png'
+import authServices from "../../services/auth.js"
 import { Link } from 'react-router-dom'
 import { useDispatch } from "react-redux"
-import { setNotification, removeNotification } from "../reducers/notification.js"
-const Sign = () =>
+import { setNotification, removeNotification } from "../../reducers/notification.js"
+const Register = () =>
 {
   const dispatch = useDispatch()
 
-  const signHandler = async(event) =>
+  const registerHandler = async(event) =>
   {
     event.preventDefault()
-    let target = event.target
-    let password = target.password.value
-    let email = target.email.value
-    const response = await authServices.sign({email, password})
+    const target = event.target
+    const name = target.name.value
+    const password = target.password.value
+    const email = target.email.value
+    const response = await authServices.register({name, email, password})
     if(!response.state)
     {
       dispatch(setNotification({state: false, message: response.message}))
     } 
     else
     {
-      console.log('Access Token:', response.accessToken)
-      dispatch(setNotification({state: true, message: 'Accessed successfuly'}))
+      dispatch(setNotification({state: true, message: 'Your account is created'}))
       target.password.value = ''
       target.email.value = ''
     }
@@ -34,17 +34,18 @@ const Sign = () =>
   return (
     <main className="flex w-full h-full">
       <div className="grid w-full xl:w-1/2 h-full">
-        <form className="place-self-center w-3/4 h-auto shadow-lg p-5" onSubmit={signHandler}>
+        <form className="place-self-center w-3/4 h-auto shadow-lg p-5" onSubmit={registerHandler}>
           <legend className="text-lg font-bold text-teal-950">Buy your favourite books now from
             <span>
               <span className="text-teal-600"> Book</span>
               <span className="text-red-600">er</span>
             </span>
           </legend>
-          <Input type='password' name='password' label='your password' placeholder='M9983D$loupy'/>
+          <Input type='text' name='name' label='your name' placeholder='Monky D Luffy'/>
           <Input type='email' name='email' label='your email' placeholder='monkyDluffy@gmail.com'/>
-          <Link to='/register' className="text-teal-600 block mb-2">I do not have an account</Link>
-          <button className="bg-teal-800 text-white	text-center font-bold capitalize w-full p-3 rounded">Sign</button>
+          <Input type='password' name='password' label='your password' placeholder='M9983D$loupy'/>
+          <Link to='/login' className="text-teal-600 block mb-2">I already have an account</Link>
+          <button className="bg-teal-800 text-white	text-center font-bold capitalize w-full p-3 rounded">register</button>
         </form>
       </div>
       <div className="static w-1/2 h-full rounded-l-lg hidden xl:block">
@@ -55,4 +56,4 @@ const Sign = () =>
 }
 
 
-export default Sign
+export default Register

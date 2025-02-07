@@ -10,13 +10,14 @@ const config = (env, argv) => {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
+      publicPath: '/'
     },
     devServer: {
       static: path.resolve(__dirname, 'dist'),
       compress: true,
       port: 9000,
       open: false,
-      historyApiFallback: true
+      historyApiFallback: true,
     },
     devtool: 'source-map',
     module: {
